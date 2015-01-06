@@ -1,17 +1,21 @@
 $(document).ready(function() {
-	new Game();
+	game = new Game();
 
-	
+	setInterval(function(){
+		game.loop()
+	}, 20);
 
 	['left', 'right', 'up', 'down'].forEach(function(direction) {
-	Mousetrap.bind(direction, function(){
-		game.player.dir = direction
-		game.player.movement = 4
-	}, 'keydown');
-	
-	Mousetrap.bind(direction, function(){
-		game.player.dir = direction
-		game.player.movement = 0
-	}, 'keyup');
+		Mousetrap.bind(direction, function(){
+			game.player.dir = direction
+			game.player.movement = 4
+		}, 'keydown');
+
+		Mousetrap.bind(direction, function(){
+			game.player.dir = 'none'
+			game.player.movement = 0
+			game.player.$player.css('background-image', "url('./public/imgs/standingplayer.png')")
+		}, 'keyup');
+	})
 
 });
