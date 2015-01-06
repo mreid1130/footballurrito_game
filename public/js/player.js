@@ -2,8 +2,8 @@ function Player (gameboard) {
 	this.$gameboard = gameboard
 	this.x = this.$gameboard.width() / 2;
 	this.y = this.$gameboard.height() / 2;
-	this.height = 40
-	this.width = 40
+	this.height = 20
+	this.width = 20
 	this.speed = 4;
 	this.dir = "none";
 	this.initDisplay();
@@ -50,6 +50,8 @@ Player.prototype = {
 			this.x = oldX
 			this.y = oldY
 		}
+
+		this.updateDisplay();
 	},
 
 	inbounds: function(){

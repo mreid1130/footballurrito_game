@@ -12,9 +12,9 @@ $(document).ready(function() {
 		}, 'keydown');
 
 		Mousetrap.bind(direction, function(){
-			game.player.dir = direction
+			game.player.dir = 'none'
 			game.player.movement = 0
-			game.player.css('background-image', "url('../imgs/standingplayer.png')")
+			game.player.$player.css('background-image', "url('./public/imgs/standingplayer.png')")
 		}, 'keyup');
 	})
 

@@ -1,8 +1,8 @@
 #gameboard {
 	height: 600px;
-	width: 600px;
+	width: 1024px;
 	border: black 2px solid;
-	background-image: url('/');
+	background-image: url('https://img1.etsystatic.com/041/0/6363146/il_fullxfull.588581113_71ee.jpg');
 	background-size: 1024px 600px;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -11,9 +11,9 @@
 .player {
   background-image: url('../imgs/standingplayer.png');
   position: absolute;
-  background-size: 40px 40px;
+  background-size: 20px 20px;
   background-repeat: no-repeat;
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
 }
 
