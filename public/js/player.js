@@ -46,7 +46,7 @@ Player.prototype = {
 				break;
 		}
 
-		if (!this.inbounds) {
+		if (!this.inbounds()) {
 			this.x = oldX
 			this.y = oldY
 		}
@@ -55,7 +55,7 @@ Player.prototype = {
 	},
 
 	inbounds: function(){
-		return this.x > this.width/2 && this.x < this.$gameboard.width() && this.y > this.height/2 && this.y < this.$gameboard.height()
+		return this.x - this.width/2 > this.width/2 && this.x < this.$gameboard.width() && this.y - this.height/2 > this.height/2 && this.y < this.$gameboard.height()
 	}
 
 }
