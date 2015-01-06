@@ -8,3 +8,12 @@
 	display: inline-block;
 }
 
+.player {
+  background-image: url('../imgs/standingplayer.png');
+  position: absolute;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+}
+
