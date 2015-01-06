@@ -1,0 +1,10 @@
+#gameboard {
+	height: 600px;
+	width: 600px;
+	border: black 2px solid;
+	background-image: url('/');
+	background-size: 1024px 600px;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
