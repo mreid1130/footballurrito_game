@@ -2,7 +2,7 @@
 	height: 468px;
 	width: 1004px;
 	border: black 2px solid;
-	background-image: url('../imgs/field.png');
+	background-image: url('../imgs/footballurrito/field.png');
 	background-size: 1004px 468px;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -10,7 +10,7 @@
 }
 
 .player {
-	background-image: url('../imgs/standingplayer.png');
+	background-image: url('../imgs/footballurrito/standingplayer.png');
 	position: absolute;
 	background-size: 20px 20px;
 	background-repeat: no-repeat;
@@ -19,11 +19,16 @@
 }
 
 .burrito {
-	background-image: url('../imgs/burrito.png');
+	background-image: url('../imgs/footballurrito/burrito.png');
 	position: absolute;
 	width: 60px;
 	height: 46px;
 	background-size: 60px 46px;
+	background-repeat: no-repeat;
+}
+
+.opponent {
+	position: absolute;
 	background-repeat: no-repeat;
 }
 

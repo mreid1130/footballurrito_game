@@ -33,36 +33,40 @@ Player.prototype = {
 		switch(this.dir) {
 			case 'right':
 				this.x += this.speed;
-				this.$player.css('background-image', "url('./public/imgs/playerright.gif')")
+				this.$player.css('background-image', "url('./public/imgs/footballurrito/playerright.gif')")
 				break;
 			case 'left':
 				this.x -= this.speed;
-				this.$player.css('background-image', "url('./public/imgs/playerleft.gif')")
+				this.$player.css('background-image', "url('./public/imgs/footballurrito/playerleft.gif')")
 				break;
 			case 'up':
 				this.y -= this.speed;
-				this.$player.css('background-image', "url('./public/imgs/playerup.gif')")
+				this.$player.css('background-image', "url('./public/imgs/footballurrito/playerup.gif')")
 				break;
 			case 'down':
 				this.y += this.speed;
-				this.$player.css('background-image', "url('./public/imgs/playerdown.gif')")
+				this.$player.css('background-image', "url('./public/imgs/footballurrito/playerdown.gif')")
 				break;
 		}
 
 		if (!this.inbounds()) {
-			this.x = oldX
-			this.y = oldY
+			if (this.x > this.width/2 || this.x < this.$gameboard.width() - this.width/2){
+				this.x = oldX
+			}
+			if (this.y > this.height/2 || this.y < this.$gameboard.height() - this.height/2){
+				this.y = oldY
+			}
 		}
 
 		this.updateDisplay();
 	},
 
 	inbounds: function(){
-		return this.x - this.width/2 > this.width/2 && this.x < this.$gameboard.width() && this.y - this.height/2 > this.height/2 && this.y < this.$gameboard.height()
+		return this.x > this.width/2 && this.x < this.$gameboard.width() - this.width/2 && this.y > this.height/2 && this.y < this.$gameboard.height() - this.height/2
 	},
 
 	hit: function(opponent){
-		
+
 		return (this.x < opponent.x + opponent.width/2 + this.width/2 &&
 		   this.x + this.width/2 + opponent.width/2 > opponent.x &&
 		   this.y < opponent.y + opponent.height/2 + this.height/2 &&
@@ -70,12 +74,17 @@ Player.prototype = {
 	},
 
 	tackled: function(){
-		this.$player.remove()
+		this.$player.css('background-image', "url('./public/imgs/footballurrito/tackledplayer.png')")
+		this.down = true
 	},
 
 	grow: function(){
 		this.height += 1
 		this.width += 1
+	},
+
+	destroy: function(){
+		this.$player.remove();
 	}
 
 }
