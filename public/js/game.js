@@ -9,16 +9,19 @@ function Game() {
 Game.prototype = {
 
 	loop: function() {
+		
 		player = this.player
 		player.move()
 
 		if (Date.now() > this.burritoSpawnTime){
 			this.spawnBurrito();
-		}
+			this.burritoSpawnTime += 1500
+		};
 
 		this.burritos.forEach(function(burrito){
 			if (player.hit(burrito)){
 				burrito.eaten = true;
+				burrito.destroy();
 				player.grow();
 			}
 		});
