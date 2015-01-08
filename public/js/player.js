@@ -14,11 +14,14 @@ Player.prototype = {
 	updateDisplay: function(){
 		this.$player.css('top', this.y - this.height/2)
 		this.$player.css('left', this.x - this.width/2)
+		this.$player.css('height', this.height)
+		this.$player.css('width', this.width)
+		this.$player.css('background-size', this.height+'px '+ this.width+'px')
 	},
 
 	initDisplay: function(){
 		this.$player = $("<div class='player'></div>")
-		$('#gameboard').append(this.$player);
+		$('#field').append(this.$player);
 
 		this.updateDisplay();
 	},
@@ -68,6 +71,11 @@ Player.prototype = {
 
 	tackled: function(){
 		this.$player.remove()
+	},
+
+	grow: function(){
+		this.height += 1
+		this.width += 1
 	}
 
 }
